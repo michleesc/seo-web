@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<form th:action="@{/login}" method="post">
+    <div>
+        <label> Email : <input type="text" name="username" id="username"/> </label>
+    </div>
+    <div>
+        <label> Password: <input type="password" name="password" id="password"/> </label>
+    </div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+<!-- Menampilkan pesan error jika login gagal -->
+<div th:if="${error}" style="color: red;">
+    <p th:text="${error}"></p>
+</div>
+
+<!-- Menampilkan pesan logout jika berhasil keluar -->
+<div th:if="${message}" style="color: green;">
+    <p th:text="${message}"></p>
+</div>
+<div class="col-12">
+    <p class="small mb-0">Don't have an account? <a th:href="@{/signup}">Create an
+        account</a></p>
+</div>
+</body>
+</html>

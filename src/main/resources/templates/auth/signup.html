@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+<h1>Create an Account</h1>
+<form th:action="@{/signup/save}" th:object="${user}" method="post">
+    <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" th:field="*{name}" placeholder="Enter your first name" required/>
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" th:field="*{email}" placeholder="Enter your email" required/>
+        <!-- Menampilkan pesan error untuk email -->
+        <div th:if="${#fields.hasErrors('email')}" style="color: red;">
+            <p th:errors="*{email}">Email Error</p>
+        </div>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" th:field="*{password}" placeholder="Enter your password" required/>
+    </div>
+    <div>
+        <button type="submit">Sign Up</button>
+    </div>
+</form>
+<div class="col-12">
+    <p class="small mb-0">Already have an account? <a th:href="@{/login}">Log in</a>
+    </p>
+</div>
+</body>
+</html>
