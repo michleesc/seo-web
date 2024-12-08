@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Reporter - HTML Blog Template</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=5" name="viewport">
+    <meta content="This is meta description" name="description">
+    <meta content="Themefisher" name="author">
+    <link rel="shortcut icon" th:href="@{/seo/images/favicon.png}" type="image/x-icon">
+    <link rel="icon" th:href="@{/seo/images/favicon.png}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- theme meta -->
+    <meta content="reporter" name="theme-name"/>
+
+    <!-- # Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Neuton:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- # CSS Plugins -->
+    <link rel="stylesheet" th:href="@{/seo/plugins/bootstrap/bootstrap.min.css}">
+
+    <!-- # Main Style Sheet -->
+    <link rel="stylesheet" th:href="@{/seo/css/style.css}">
+</head>
+<body>
+
+<header class="navigation">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light px-0">
+            <a class="navbar-brand order-1 py-0" href="index.html">
+                <img alt="Reporter Hugo" class="img-fluid" decoding="async" loading="prelaod"
+                     src="/seo/images/logo.png">
+            </a>
+            <div class="navbar-actions order-3 ml-0 ml-md-4">
+                <button aria-label="navbar toggler" class="navbar-toggler border-0" data-target="#navigation"
+                        data-toggle="collapse"
+                        type="button"><span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <form action="#!" class="search order-lg-3 order-md-2 order-3 ml-auto">
+                <input autocomplete="off" id="search-query" name="s" placeholder="Search..." type="search">
+            </form>
+            <div class="collapse navbar-collapse text-center order-lg-2 order-4" id="navigation">
+                <ul class="navbar-nav mx-auto mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true"
+                                                     class="nav-link dropdown-toggle"
+                                                     data-toggle="dropdown" href="#" role="button">
+                        Articles
+                    </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="travel.html">Travel</a>
+                            <a class="dropdown-item" href="travel.html">Lifestyle</a>
+                            <a class="dropdown-item" href="travel.html">Cruises</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container">
+            <div class="row no-gutters-lg">
+                <div class="col-12">
+                    <h2 class="section-title">Latest Articles</h2>
+                </div>
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <article class="card article-card">
+                                <a href="article.html">
+                                    <div class="card-image">
+                                        <img alt="Post Thumbnail" class="w-100" decoding="async"
+                                             loading="lazy" th:src="${lastContent.image}">
+                                    </div>
+                                </a>
+                                <div class="card-body px-0 pb-1">
+                                    <ul class="post-meta mb-2">
+                                        <li><a href="#!" th:text="*{lastContent.category}">category</a>
+                                        </li>
+                                    </ul>
+                                    <h2 class="h1"><a class="post-title" href="article.html"><a
+                                            th:text="*{lastContent.title}">title</a></a>
+                                    </h2>
+                                    <p class="card-text" th:text="*{lastContent.body}">body</p>
+                                    <div class="content"><a class="read-more-btn" href="article.html">Read Full
+                                        Article</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <article class="card article-card article-card-sm h-100">
+                                <a href="article.html">
+                                    <div class="card-image">
+                                        <img alt="Post Thumbnail" class="w-100" decoding="async"
+                                             loading="lazy" src="/seo/images/post/post-2.jpg">
+                                    </div>
+                                </a>
+                                <div class="card-body px-0 pb-0">
+                                    <ul class="post-meta mb-2">
+                                        <li><a href="#!">travel</a>
+                                        </li>
+                                    </ul>
+                                    <h2><a class="post-title" href="article.html">An
+                                        Experiential Guide to Explore This Kingdom</a></h2>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna …</p>
+                                    <div class="content"><a class="read-more-btn" th:href="@{/artikel}">Read Full
+                                        Article</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <nav class="mt-4">
+                                        <!-- pagination -->
+                                        <nav class="mb-md-50">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item">
+                                                    <a aria-label="Pagination Arrow" class="page-link" href="#!">
+                                                        <svg fill="currentColor" height="26" viewBox="0 0 16 16"
+                                                             width="26" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+                                                                  fill-rule="evenodd"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active "><a class="page-link" href="index.html">
+                                                    1
+                                                </a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link" href="#!">
+                                                    2
+                                                </a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a aria-label="Pagination Arrow" class="page-link" href="#!">
+                                                        <svg fill="currentColor" height="26" viewBox="0 0 16 16"
+                                                             width="26" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                                                                  fill-rule="evenodd"/>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget-blocks">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="widget">
+                                    <div class="widget-body">
+                                        <img alt="About Me" class="w-100 author-thumb-sm d-block" decoding="async"
+                                             loading="lazy"
+                                             src="/seo/images/author.jpg">
+                                        <h2 class="widget-title my-3">Michlee Septian Chandra</h2>
+                                        <p class="mb-3 pb-2">Hello, I’m Michlee Septian Chandra. A Content writter,
+                                            Developer and Story teller.</p> <a class="btn btn-sm btn-outline-primary"
+                                                                               href="about.html">Know
+                                        More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6">
+                                <div class="widget">
+                                    <h2 class="section-title mb-3">Recommended</h2>
+                                    <div class="widget-body">
+                                        <div class="widget-list">
+                                            <article class="card mb-4">
+                                                <div class="card-image">
+                                                    <img alt="Post Thumbnail" class="w-100" decoding="async"
+                                                         loading="lazy" src="/seo/images/post/post-9.jpg">
+                                                </div>
+                                                <div class="card-body px-0 pb-1">
+                                                    <h3><a class="post-title post-title-sm"
+                                                           href="article.html">Portugal and France Now
+                                                        Allow Unvaccinated Tourists</a></h3>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit, sed do eiusmod tempor …</p>
+                                                    <div class="content"><a class="read-more-btn" href="article.html">Read
+                                                        Full Article</a>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <a class="media align-items-center" href="article.html">
+                                                <img alt="Post Thumbnail" class="w-100" decoding="async"
+                                                     loading="lazy" src="/seo/images/post/post-2.jpg">
+                                                <div class="media-body ml-3">
+                                                    <h3 style="margin-top:-5px">These Are Making It Easier To Visit</h3>
+                                                    <p class="mb-0 small">Heading Here is example of hedings. You can
+                                                        use …</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6">
+                                <div class="widget">
+                                    <h2 class="section-title mb-3">Categories</h2>
+                                    <div class="widget-body">
+                                        <ul class="widget-list">
+                                            <li><a href="#!">computer<span class="ml-auto">(3)</span></a>
+                                            </li>
+                                            <li><a href="#!">cruises<span class="ml-auto">(2)</span></a>
+                                            </li>
+                                            <li><a href="#!">destination<span class="ml-auto">(1)</span></a>
+                                            </li>
+                                            <li><a href="#!">internet<span class="ml-auto">(4)</span></a>
+                                            </li>
+                                            <li><a href="#!">lifestyle<span class="ml-auto">(2)</span></a>
+                                            </li>
+                                            <li><a href="#!">news<span class="ml-auto">(5)</span></a>
+                                            </li>
+                                            <li><a href="#!">telephone<span class="ml-auto">(1)</span></a>
+                                            </li>
+                                            <li><a href="#!">tips<span class="ml-auto">(1)</span></a>
+                                            </li>
+                                            <li><a href="#!">travel<span class="ml-auto">(3)</span></a>
+                                            </li>
+                                            <li><a href="#!">website<span class="ml-auto">(4)</span></a>
+                                            </li>
+                                            <li><a href="#!">hugo<span class="ml-auto">(2)</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark mt-5">
+    <div class="container section">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <a class="d-inline-block mb-4 pb-2" href="index.html">
+                    <img alt="Reporter Hugo" class="img-fluid" decoding="async" loading="prelaod"
+                         src="images/logo-white.png">
+                </a>
+                <ul class="p-0 d-flex navbar-footer mb-0 list-unstyled">
+                    <li class="nav-item my-0"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item my-0"><a class="nav-link" href="article.html">Elements</a></li>
+                    <li class="nav-item my-0"><a class="nav-link" href="privacy-policy.html">Privacy Policy</a></li>
+                    <li class="nav-item my-0"><a class="nav-link" href="terms-conditions.html">Terms Conditions</a></li>
+                    <li class="nav-item my-0"><a class="nav-link" href="404.html">404 Page</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright bg-dark content">Designed &amp; Developed By <a
+            href="https://themefisher.com/">Themefisher</a></div>
+</footer>
+
+
+<!-- # JS Plugins -->
+<script src="/seo/plugins/jquery/jquery.min.js"></script>
+<script src="/seo/plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- Main Script -->
+<script src="/seo/js/script.js"></script>
+
+</body>
+</html>

@@ -17,7 +17,7 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String home() {
         return "home";
     }
@@ -32,11 +32,11 @@ public class AuthController {
                         @RequestParam(name = "error", required = false) String error,
                         @RequestParam(name = "logout", required = false) String logout) {
         if (error != null) {
-            model.addAttribute("error", "Email atau kata sandi salah");
+            model.addAttribute("error", "Email or Password Incorrect");
         }
 
         if (logout != null) {
-            model.addAttribute("message", "Berhasil keluar");
+            model.addAttribute("message", "Success Logout");
         }
         return "auth/login";
     }
